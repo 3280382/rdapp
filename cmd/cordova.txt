@@ -1,0 +1,46 @@
+cordova create rdapp
+cordova plugin add cordova-plugin-battery-status
+cordova plugin add cordova-plugin-camera
+cordova plugin add cordova-plugin-console
+cordova plugin add cordova-plugin-contacts
+cordova plugin add cordova-plugin-device
+cordova plugin add cordova-plugin-device-motion
+cordova plugin add cordova-plugin-device-orientation
+cordova plugin add cordova-plugin-dialogs
+cordova plugin add cordova-plugin-file
+cordova plugin add cordova-plugin-file-transfer
+cordova plugin add cordova-plugin-geolocation
+cordova plugin add cordova-plugin-globalization
+cordova plugin add cordova-plugin-inappbrowser
+cordova plugin add cordova-plugin-media
+cordova plugin add cordova-plugin-media-capture
+cordova plugin add cordova-plugin-network-information
+cordova plugin add cordova-plugin-splashscreen
+cordova plugin add cordova-plugin-vibration
+cordova plugin add cordova-plugin-statusbar
+cordova plugin add cordova-plugin-whitelist
+cordova plugin add cordova-plugin-legacy-whitelist
+
+cordova platform add browser
+cordova platform add android
+
+
+Dependent plugin "cordova-plugin-compat" already installed on android.
+
+The Android Persistent storage location now defaults to "Internal". Please check this plugins README to see if you application needs any changes in it
+s config.xml.
+
+If this is a new application no changes are required.
+
+If this is an update to an existing application that did not specify an "AndroidPersistentFileLocation" you may need to add:
+
+      "<preference name="AndroidPersistentFileLocation" value="Compatibility" />"
+
+to config.xml in order for the application to find previously stored files.
+
+
+Installing "cordova-plugin-whitelist" for android
+
+               This plugin is only applicable for versions of cordova-android greater than 4.0. If you have a previous platform version, you do *not*
+need this plugin since the whitelist will be built in.
+
