@@ -448,6 +448,7 @@ public class PluginManager {
      */
     public boolean onOverrideUrlLoading(String url) {
         for (PluginEntry entry : this.entryMap.values()) {
+        		LOG.e(TAG, "entry.service(" + entry.service + ")");
             CordovaPlugin plugin = pluginMap.get(entry.service);
             if (plugin != null && plugin.onOverrideUrlLoading(url)) {
                 return true;

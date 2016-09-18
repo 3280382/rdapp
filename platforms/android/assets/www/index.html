@@ -7,12 +7,24 @@
 	<title>Multi-page template</title>
 	<link rel="stylesheet" href="./css/jquery.mobile.theme-1.4.5.css">
 	<link rel="stylesheet" href="./css/jquery.mobile.structure-1.4.5.css">
+	<link rel="stylesheet" href="./css/jquery.mobile.external-png-1.4.5.css">
+	
 	<link rel="stylesheet" href="./css/index.css">
 	<link rel="shortcut icon" href="./favicon.ico">
 	<script src="./js/cordova-index.js"></script>
 	<script src="./js/jquery.js"></script>
 	<script src="./js/jquery.mobile-index.js"></script>
 	<script src="./js/jquery.mobile-1.4.5.js"></script>
+	<script>
+	/*
+	    $(document).on( "mobileinit", function() {
+      $.support.cors = true;
+      $.mobile.allowCrossDomainPages = true;
+      $.mobile.phonegapNavigationEnabled = true;
+      $.mobile.ignoreContentEnabled = true;
+    });
+    */
+	</script>
 </head>
 
 <body>
@@ -20,17 +32,25 @@
 <div data-role="page">
 
 	<div data-role="header">
-		<h1>Single page</h1>
+		<h1>rdapp</h1>
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
-		<p>This is a single page boilerplate template that you can copy to build your first jQuery Mobile page. Each link or form from here will pull a new page in via Ajax to support the animated page transitions.</p>
-		<p>Just view the source and copy the code to get started. All the CSS and JS is linked to the jQuery CDN versions so this is super easy to set up. Remember to include a meta viewport tag in the head to set the zoom level.</p>
-		<p>This template is standard HTML document with a single "page" container inside, unlike a <a href="http://demos.jquerymobile.com/pages-multi-page/" data-ajax="false">multi-page template</a> that has multiple pages within it. We strongly recommend building your site or app as a series of separate pages like this because it's cleaner, more lightweight and works better without JavaScript.</p>
+		<h1>Rapid development app framework</h1>
+		<p>
+		<a href="http://m.jd.com">m.jd.com</a>
+		</p>
 	</div><!-- /content -->
 
 	<div data-role="footer">
-		<h4>首页|本地|UI|远程|模块|平台</h4>
+    <div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-left">
+        <a href="./index.html" data-ajax="false"  class="ui-btn ui-btn-icon-top ui-icon-home">首页</a>
+        <a href="./lri/index.html" data-ajax="false"  class="ui-btn ui-btn-icon-top ui-icon-location">本地</a>
+        <a href="#" data-ajax="false"  class="ui-btn ui-btn-icon-top ui-icon-bullets">界面</a>
+        <a href="#" data-ajax="false"  class="ui-btn ui-btn-icon-top ui-icon-cloud">远程</a>
+        <a href="#" data-ajax="false"  class="ui-btn ui-btn-icon-top ui-icon-grid">模块</a>
+        <a href="#" data-ajax="false"  class="ui-btn ui-btn-icon-top ui-icon-bars">平台</a>
+    </div>
 	</div><!-- /footer -->
 
 </div><!-- /page -->

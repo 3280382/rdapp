@@ -600,10 +600,13 @@ public class CordovaWebViewImpl implements CordovaWebView {
         public boolean onNavigationAttempt(String url) {
             // Give plugins the chance to handle the url
             if (pluginManager.onOverrideUrlLoading(url)) {
+            		LOG.e(TAG, "pluginManager.onOverrideUrlLoading(" + url + ")");
                 return true;
             } else if (pluginManager.shouldAllowNavigation(url)) {
+            		LOG.e(TAG, "pluginManager.shouldAllowNavigation(" + url + ")");
                 return false;
             } else if (pluginManager.shouldOpenExternalUrl(url)) {
+            		LOG.e(TAG, "pluginManager.shouldOpenExternalUrl(" + url + ")");
                 showWebPage(url, true, false, null);
                 return true;
             }

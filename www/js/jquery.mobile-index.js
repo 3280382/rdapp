@@ -190,7 +190,7 @@ if ( location.protocol.substr(0,4)  === 'file' ||
 
 	// Check to see if ajax can be used. This does a quick ajax request and blocks the page until its done
 	$.ajax({
-		url: '.',
+		url: 'index.html',
 		async: false,
 		isLocal: true
 	}).error(function() {
