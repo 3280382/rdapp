@@ -1131,7 +1131,7 @@ div.ui-mobile-viewport {
 	border-width: 0;
 	overflow: visible;
 	overflow-x: hidden;
-	padding: 1em;
+	padding: 0em;
 }
 /* Corner styling for dialogs and popups */
 .ui-corner-all > .ui-header:first-child,
