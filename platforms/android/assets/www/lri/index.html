@@ -5,39 +5,104 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Multi-page template</title>
-	<link rel="stylesheet" href="./css/jquery.mobile.theme-1.4.5.css">
-	<link rel="stylesheet" href="./css/jquery.mobile.structure-1.4.5.css">
-	<link rel="stylesheet" href="./css/jquery.mobile.external-png-1.4.5.css">
+	<link rel="stylesheet" href="../css/jquery.mobile.theme-1.4.5.css">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.5.css">
+	<link rel="stylesheet" href="../css/jquery.mobile.external-png-1.4.5.css">
 	
-	<link rel="stylesheet" href="./css/index.css">
-	<link rel="shortcut icon" href="./favicon.ico">
-	<script src="./js/cordova-index.js"></script>
-	<script src="./js/jquery.js"></script>
-	<script src="./js/jquery.mobile-index.js"></script>
-	<script src="./js/jquery.mobile-1.4.5.js"></script>
+	<link rel="stylesheet" href="../css/index.css">
+	<link rel="shortcut icon" href="../favicon.ico">
+	<script src="../js/cordova-index.js"></script>
+	<script src="../js/jquery.js"></script>
+	<script src="../js/jquery.mobile-index.js"></script>
+	<script src="../js/jquery.mobile-1.4.5.js"></script>
+	<script>
+	/*
+	    $(document).on( "mobileinit", function() {
+      $.support.cors = true;
+      $.mobile.allowCrossDomainPages = true;
+      $.mobile.phonegapNavigationEnabled = true;
+      $.mobile.ignoreContentEnabled = true;
+    });
+    */
+    function showDebug()
+    {
+    	alert("debug_msg");
+    	console.log("log debug_msg");
+			console.error("error debug_msg");
+			console.warn("warn debug_msg");
+			console.info("info debug_msg");
+			console.debug("debug debug_msg");
+    }
+    function getPkgFile(fileUrl)
+    {
+		    alert(fileUrl);
+		    $.ajax({
+				url:  fileUrl,
+				data: {},
+				type: "GET",
+				complete: function(res,stat){
+					if ( stat == "success" )
+					{
+						alert(res.responseText);
+					}
+				},
+				error:function(res,stat){
+					alert("获取失败");
+				}
+				});		
+    }
+    function getPicture()
+    {
+    	navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+    	destinationType: Camera.DestinationType.FILE_URI });
+    }
+    
+    function onSuccess(imageURI) {
+	    var image = document.getElementById('myImage');
+	    image.src = imageURI;
+		}
+
+		function onFail(message) {
+		   alert('Failed because: ' + message);
+		}
+	</script>
 </head>
 
 <body>
 
 <div data-role="page">
 
-	<div data-role="header">
+	<div data-role="header"  data-position="fixed">
 		<h1>rdapp</h1>
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
-		<h1>Rapid development app framework - lri</h1>
-		<p></p>
+		<h1>Rapid development app framework</h1>
+		<p>
+		<ul>
+			<li>debug:<a href="javascript:void(0);" onclick="showDebug();" >debug_msg</a></li>
+			<li>跨域连接:<a href="http://m.jd.com">m.jd.com</a></li>
+			<li>包内连接：<a href="../home/index.html">首页</a></li>
+			<li>包内ajax：<a href="javascript:void(0)"  onclick="getPkgFile('../home/index.html');" >首页</a></li>
+			<li>跨域ajax：<a href="javascript:void(0)"  onclick="getPkgFile('http://m.jd.com');" >m.jd.com</a></li>
+			<li>plugin camera：<a href="javascript:void(0)"  onclick="getPicture();" >camera</a>
+			<div id="myImage"></div>
+			</li>
+		</ul>
+		
+		</p>
 	</div><!-- /content -->
 
-	<div data-role="footer" style="width:100%;">
-    <div data-role="controlgroup" data-type="horizontal" style="width:100%;" class="ui-mini ui-btn-left">
-        <a href="index.html" data-ajax="false" style="width:17%;" class="ui-btn ui-btn-icon-top ui-icon-home">首页</a>
-        <a href="lri/index.html" data-ajax="false" style="width:17%;" class="ui-btn ui-btn-icon-top ui-icon-location">本地</a>
-        <a href="#" data-ajax="false" style="width:17%;" class="ui-btn ui-btn-icon-top ui-icon-bullets">UI</a>
-        <a href="#" data-ajax="false" style="width:17%;" class="ui-btn ui-btn-icon-top ui-icon-cloud">远程</a>
-        <a href="#" data-ajax="false" style="width:17%;" class="ui-btn ui-btn-icon-top ui-icon-grid">模块</a>
-        <a href="#" data-ajax="false" style="width:15%;" class="ui-btn ui-btn-icon-top ui-icon-bars">平台</a>
+	<div data-role="footer" data-position="fixed">
+    		<div data-role="navbar">
+			<ul>
+        <li><a href="../home/index.html"  class="ui-btn ui-btn-icon-top ui-icon-home">首页</a></li>
+        <li><a href="../lri/index.html"  class="ui-btn-active ui-btn-icon-top ui-icon-location">本地</a></li>
+        <li><a href="#" data-ajax="false"  class="ui-btn ui-btn-icon-top ui-icon-bullets">界面</a></li>
+        <li><a href="#" data-ajax="false"  class="ui-btn ui-btn-icon-top ui-icon-cloud">远程</a></li>
+        <li><a href="#" data-ajax="false"  class="ui-btn ui-btn-icon-top ui-icon-grid">模块</a></li>
+        <!--<li><a href="#" data-ajax="false"  class="ui-btn ui-btn-icon-top ui-icon-bars">平台</a></li>-->
+    </ul>
     </div>
 	</div><!-- /footer -->
 

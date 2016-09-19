@@ -1,4 +1,28 @@
 (function( $, undefined ) {
+	/*
+	$(document).ajaxStart(function(){
+	  	alert("ajaxStart");
+	});
+	$(document).ajaxStop(function(){
+	  	alert("ajaxStop");
+	});
+	$(document).ajaxComplete(function(event,request,settings){
+	  	alert("ajaxComplete");
+	  	var requestStr = "";alert(request);
+	  	$.each(request,function(key,value){
+	  		requestStr += key + ":" + value + ";";
+	  	});
+	  	alert(requestStr);
+	});
+	$(document).ajaxError(function(event,request,settings){
+		alert("ajaxComplete");
+			var requestStr = "";alert(request);
+	  	$.each(request,function(key,value){
+	  		requestStr += key + ":" + value + ";";
+	  	});
+	  	alert(requestStr);
+	});
+	*/
 	//special click handling to make widget work remove after nav changes in 1.4
 	var href,
 		ele = "";
