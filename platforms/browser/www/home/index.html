@@ -24,6 +24,11 @@
       $.mobile.ignoreContentEnabled = true;
     });
     */
+    document.addEventListener("deviceready", onDeviceReady, false);
+		function onDeviceReady() {
+		    console.log(navigator.camera);
+		    alert(navigator.camera);
+		}
     function showDebug()
     {
     	alert("debug_msg");
@@ -90,7 +95,7 @@
     		<div data-role="navbar">
 			<ul>
         <li><a href="../home/index.html"  class="ui-btn-active ui-btn-icon-top ui-icon-home">首页</a></li>
-        <li><a href="../lri/index.html"  class="ui-btn ui-btn-icon-top ui-icon-location">本地</a></li>
+        <li><a href="../lri/index.html" data-ajax="false"  class="ui-btn ui-btn-icon-top ui-icon-location">本地</a></li>
         <li><a href="#" data-ajax="false"  class="ui-btn ui-btn-icon-top ui-icon-bullets">界面</a></li>
         <li><a href="#" data-ajax="false"  class="ui-btn ui-btn-icon-top ui-icon-cloud">远程</a></li>
         <li><a href="#" data-ajax="false"  class="ui-btn ui-btn-icon-top ui-icon-grid">模块</a></li>

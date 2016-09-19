@@ -35,22 +35,37 @@
     }
     function getPkgFile(fileUrl)
     {
-    alert(fileUrl);
-    $.ajax({
-		url:  fileUrl,
-		data: {},
-		type: "GET",
-		complete: function(res,stat){
-			if ( stat == "success" )
-			{
-				alert(res.responseText);
-			}
-		},
-		error:function(res,stat){
-			alert("获取失败");
-		}
-	});		
+		    alert(fileUrl);
+		    $.ajax({
+				url:  fileUrl,
+				data: {},
+				type: "GET",
+				complete: function(res,stat){
+					if ( stat == "success" )
+					{
+						alert(res.responseText);
+					}
+				},
+				error:function(res,stat){
+					alert("获取失败");
+				}
+				});		
     }
+    function getPicture()
+    {
+    	alert(navigator.camera);
+    	navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+    	destinationType: Camera.DestinationType.FILE_URI });
+    }
+    
+    function onSuccess(imageURI) {
+	    var image = document.getElementById('myImage');
+	    image.src = imageURI;
+		}
+
+		function onFail(message) {
+		   alert('Failed because: ' + message);
+		}
 	</script>
 </head>
 
@@ -69,9 +84,13 @@
 			<li>debug:<a href="javascript:void(0);" onclick="showDebug();" >debug_msg</a></li>
 			<li>跨域连接:<a href="http://m.jd.com">m.jd.com</a></li>
 			<li>包内连接：<a href="../home/index.html">首页</a></li>
-			<li>包内ajax：<a href="javascript:void(0)"  onclick="getPkgFile('../home/index.html');" >首页</a></li>
-			<li>跨域ajax：<a href="javascript:void(0)"  onclick="getPkgFile('http://m.jd.com');" >m.jd.com</a></li>
+			<li>包内ajax：<a href="javascript:void(0);"  onclick="getPkgFile('../home/index.html');" >首页</a></li>
+			<li>跨域ajax：<a href="javascript:void(0);"  onclick="getPkgFile('http://m.jd.com');" >m.jd.com</a></li>
+			<li>plugin camera：<a href="javascript:void(0);"  onclick="getPicture();" >camera</a>
+			<div id="myImage"></div>
+			</li>
 		</ul>
+		
 		</p>
 	</div><!-- /content -->
 
