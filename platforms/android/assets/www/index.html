@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Multi-page template</title>
+	<link rel="stylesheet" href="./css/jquery.mobile.external-png-1.4.5.css">
+	
+	<link rel="stylesheet" href="./css/index.css">
+	<link rel="shortcut icon" href="./favicon.ico">
+	<script src="./cordova.js"></script>
+	<script src="./js/cordova-index.js"></script>
+	<script src="./js/jquery.js"></script>
+	<script src="./js/jquery.mobile-index.js"></script>
+	<script src="./js/jquery.mobile-1.4.5.js"></script>
+	<script>
+	/*
+	    $(document).on( "mobileinit", function() {
+      $.support.cors = true;
+      $.mobile.allowCrossDomainPages = true;
+      $.mobile.phonegapNavigationEnabled = true;
+      $.mobile.ignoreContentEnabled = true;
+    });
+    */
+    function showPage(pageUrl)
+    {
+		    $.ajax({
+				url:  pageUrl,
+				data: {},
+				type: "GET",
+				complete: function(res,stat){
+					if ( stat == "success" )
+					{
+						$("#mainwrapper").html(res.responseText);
+					}
+				},
+				error:function(res,stat){
+					alert("获取失败");
+				}
+				});		
+    }
+	</script>
+</head>
+
+<body>
+
+<div data-role="page">
+
+	<div data-role="header"  data-position="fixed">
+		<h1>rdapp</h1>
+	</div><!-- /header -->
+
+<div id="mainwrapper" style="	padding: 0;	margin: 0;width:100%;height:100%;">
+	<div role="main" class="ui-content">
+		<h1>Rapid development app framework</h1>
+		<p>
+		送人 <br>
+【唐】李咸用 <br>
+一轴烟花满口香，诸侯相见肯相忘。 <br>
+未闻珪璧为人弃，莫倦江山去路长。 <br>
+盈耳暮蝉催别骑，数杯浮蚁咽离肠。 <br>
+眼前多少难甘事，自古男儿当自强。 <br>
+<br>
+酬乐天咏老见示 <br>
+【唐】刘禹锡 <br>
+人谁不愿老，老去有谁怜。身瘦带频减，发稀冠自偏。 <br>
+废书缘惜眼，多炙为随年。经事还谙事，阅人如阅川。 <br>
+细思皆幸矣，下此便翛然。莫道桑榆晚，微霞尚满天。 <br>
+<br>
+乌江 <br>
+【宋】李清照 <br>
+生当为人杰， <br>
+死亦作鬼雄。 <br>
+至今思项羽， <br>
+不肯过江东。 <br>
+<br>
+画菊 <br>
+【宋】郑思肖 <br>
+花开不并百花丛，独立疏篱趣无穷。 <br>
+宁可枝头抱香死，何曾吹落北风中。 <br>
+<br>
+咏石灰 <br>
+【明】于谦 <br>
+千锤万击出深山，烈火焚烧若等闲。 <br>
+粉身碎骨全不顾，要留清白在人间。 <br>
+<br>
+咏竹 <br>
+【清】郑板桥 <br>
+咬定青山不放松，立根原在破岩中。 <br>
+千磨万击还坚劲，任尔东西南北风。
+		</p>
+	</div><!-- /content -->
+</div><!-- /mainwrapper -->
+
+	<div data-role="footer" data-position="fixed">
+    		<div data-role="navbar">
+			<ul>
+        <li><a href="javascript:void(0);" onclick="showPage('./home/index.html');" data-ajax="false"  class="ui-btn-active ui-btn-icon-top ui-icon-home">首页</a></li>
+        <li><a href="javascript:void(0);" onclick="showPage('./lri/index.html');" data-ajax="false"  class="ui-btn ui-btn-icon-top ui-icon-location">本地</a></li>
+        <li><a href="#" data-ajax="false"  class="ui-btn ui-btn-icon-top ui-icon-bullets">界面</a></li>
+        <li><a href="#" data-ajax="false"  class="ui-btn ui-btn-icon-top ui-icon-cloud">远程</a></li>
+        <li><a href="#" data-ajax="false"  class="ui-btn ui-btn-icon-top ui-icon-grid">模块</a></li>
+        <!--<li><a href="#" data-ajax="false"  class="ui-btn ui-btn-icon-top ui-icon-bars">平台</a></li>-->
+    </ul>
+    </div>
+	</div><!-- /footer -->
+
+</div><!-- /page -->
+
+</body>
+</html>
