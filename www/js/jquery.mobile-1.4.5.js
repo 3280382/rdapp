@@ -5242,7 +5242,8 @@ $.widget( "mobile.page", {
 				type: settings.type,
 				data: settings.data,
 				contentType: settings.contentType,
-				dataType: "html",
+				//dataType: "html",
+				dataType: "text",
 				success: this._loadSuccess( absUrl, triggerData, settings, deferred ),
 				error: this._loadError( absUrl, triggerData, settings, deferred )
 			});
