@@ -6,52 +6,44 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>home</title>
 	<link rel="stylesheet" href="./css/jquery.mobile.external-png-1.4.5.css">
+	<!--<link rel="stylesheet" href="./css/jquery.mobile.theme-1.4.5.css">	
+	<link rel="stylesheet" href="./css/rdapp.css">
+	<link rel="stylesheet" href="./css/jquery.mobile.icons.min.css">	
+	<link rel="stylesheet" href="./css/jquery.mobile.structure-1.4.5.css">-->
 	
 	<link rel="shortcut icon" href="./favicon.ico">
 	<script src="./cordova.js"></script>
 	<script src="./js/cordova-index.js"></script>
 	<script src="./js/jquery.js"></script>
 	<script src="./js/jquery.mobile-1.4.5.js"></script>
-	<script>
-	/*
-	    $(document).on( "mobileinit", function() {
-      $.support.cors = true;
-      $.mobile.allowCrossDomainPages = true;
-      $.mobile.phonegapNavigationEnabled = true;
-      $.mobile.ignoreContentEnabled = true;
-    });
-    */
-    function showPage(pageUrl)
-    {
-		    $.ajax({
-				url:  pageUrl,
-				data: {},
-				type: "GET",
-				dataType: "text",
-				complete: function(res,stat){
-					if ( stat == "success" )
-					{
-						$("#mainwrapper").html(res.responseText);
-					}
-				},
-				error:function(res,stat){
-					alert("获取失败");
-				}
-				});		
-    }
-	</script>
+<script>
+		$(function(){
+			$("[data-role='navbar']").navbar();
+			$("[data-role='header'], [data-role='footer']").toolbar();
+			
+			$("[data-role='popup']").popup();
+			
+			$("[data-role='panel']").panel();
+			
+			$.mobile.document.on( "click", "#optMoreInfo", function( evt ) {
+    	$( "#moreInfo" ).popup( "open", { x: evt.pageX-20, y: evt.pageY+20 } );
+    evt.preventDefault();
+});
+		});
+</script>	
+
 </head>
 
 <body>
+<div data-role="header"  data-position="fixed" data-theme="a">
+	<h1>RDAPP</h1>
+    <a href="#myInfo" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-user">用户信息</a>	
+    <a href="#" id="optMoreInfo" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-right ui-btn-icon-left ui-icon-plus">更多</a>	
+</div><!-- /header -->
 
 <div data-role="page">
-
-	<div data-role="header"  data-position="fixed">
-		<h1>rdapp</h1>
-	</div><!-- /header -->
-
 	<div role="main" class="ui-content">
-		<h1>Rapid development app framework</h1>
+		<p>Rapid development app framework</p>
 		<p>
 		送人 <br>
 【唐】李咸用 <br>
@@ -62,9 +54,12 @@
 <br>
 酬乐天咏老见示 <br>
 【唐】刘禹锡 <br>
-人谁不愿老，老去有谁怜。身瘦带频减，发稀冠自偏。 <br>
-废书缘惜眼，多炙为随年。经事还谙事，阅人如阅川。 <br>
-细思皆幸矣，下此便翛然。莫道桑榆晚，微霞尚满天。 <br>
+人谁不愿老，老去有谁怜。 <br>
+身瘦带频减，发稀冠自偏。 <br>
+废书缘惜眼，多炙为随年。 <br>
+经事还谙事，阅人如阅川。 <br>
+细思皆幸矣，下此便翛然。 <br>
+莫道桑榆晚，微霞尚满天。 <br>
 <br>
 乌江 <br>
 【宋】李清照 <br>
@@ -89,21 +84,35 @@
 千磨万击还坚劲，任尔东西南北风。
 		</p>
 	</div><!-- /content -->
+</div><!-- /page -->
 
-	<div data-role="footer" data-position="fixed">
+	<div data-role="footer" data-position="fixed" data-theme="a">
     		<div data-role="navbar">
 			<ul>
-        <li><a href="./home/index.html"  class="ui-btn-active ui-btn-icon-top ui-icon-home">首页</a></li>
-        <li><a href="./lri/index.html"  class="ui-btn ui-btn-icon-top ui-icon-location">本地</a></li>
-        <li><a href="#" data-ajax="false"  class="ui-btn ui-btn-icon-top ui-icon-bullets">界面</a></li>
-        <li><a href="#" data-ajax="false"  class="ui-btn ui-btn-icon-top ui-icon-cloud">远程</a></li>
-        <li><a href="#" data-ajax="false"  class="ui-btn ui-btn-icon-top ui-icon-grid">模块</a></li>
-        <!--<li><a href="#" data-ajax="false"  class="ui-btn ui-btn-icon-top ui-icon-bars">平台</a></li>-->
+        <li><a href="home/index.html" data-prefetch="true" data-transition="none" style="border:0px" class="ui-btn-active ui-btn-icon-top ui-icon-home">首页</a></li>
+        <li><a href="lri/index.html" data-prefetch="true" data-transition="none" style="border:0px" class="ui-btn ui-btn-icon-top ui-icon-location">本地</a></li>
+        <li><a href="ui/index.html" data-prefetch="true" data-transition="none" style="border:0px" class="ui-btn ui-btn-icon-top ui-icon-bullets">界面</a></li>
+        <li><a href="#" style="border:0px" class="ui-btn ui-btn-icon-top ui-icon-cloud">远程</a></li>
+        <li><a href="#" style="border:0px" class="ui-btn ui-btn-icon-top ui-icon-grid">模块</a></li>
+        <!--<li><a href="#"   class="ui-btn ui-btn-icon-top ui-icon-bars">平台</a></li>-->
     </ul>
     </div>
 	</div><!-- /footer -->
+	
+	<div data-role="popup" id="moreInfo" data-arrow="true">
+<p>联系快速开发</p>
+<p>投诉快速开发</p>
+<p>投诉快速开发</p>
+<p>投诉快速开发</p>	
+</div>
 
-</div><!-- /page -->
+<div data-role="panel" id="myInfo" data-position="left" data-display="reveal" data-theme="a">
 
+      <h3>Left Panel: Reveal</h3>
+      <p>This panel is positioned on the left with the reveal display mode. The panel markup is <em>after</em> the header, content and footer in the source order.</p>
+      <p>To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
+      <a href="#demo-links" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">Close panel</a>
+
+</div><!-- /leftpanel1 -->
 </body>
 </html>

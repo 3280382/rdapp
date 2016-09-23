@@ -1,0 +1,91 @@
+<div data-role="page">
+
+	<div role="main" class="ui-content my-page">
+			<ul data-role="listview">
+			<li>
+			<a onclick="getPicture();" >
+			<img src="../images/plugins/camera_128x128-32.png" class="ui-li-icon">
+			<h2>摄像头</h2>
+				<p class="ui-li-aside">快！</p>
+			</a>			
+			</li>	
+			<li>
+			<a href="#" onclick="showDebug();" >
+			<img src="../images/plugins/task_manager_128x128-32.png" class="ui-li-icon">
+			<h2>debug</h2>
+			<p class="ui-li-aside">快！</p>
+			</a></li>
+			<li>
+				<a href="http://m.jd.com">
+				<img src="../images/plugins/flickr_128x128-32.png" class="ui-li-icon">
+				<h2>跨域连接</h2>
+				</a></li>
+			<li>
+			<a href="../home/index.html">
+				<img src="../images/plugins/dropbox_128x128-32.png" class="ui-li-icon">
+				<h2>包内连接</h2>
+				<p class="ui-li-aside">快！</p>
+				</a></li>
+			<li>
+			<a onclick="getPkgFile('../home/index.html');" >
+			<img src="../images/plugins/linkedin_128x128-32.png" class="ui-li-icon">
+			<h2>包内ajax</h2>
+				<p class="ui-li-aside">快！</p>
+			</a></li>
+			<li>
+			<a onclick="getPkgFile('http://m.jd.com');" >
+			<img src="../images/plugins/thinking_space_128x128-32.png" class="ui-li-icon">
+			<h2>跨域ajax</h2>
+				<p class="ui-li-aside">快！</p>
+			</a></li>		
+		</ul>
+		<img id="myImage" style="display:none;"></img>
+		
+			<script>
+    function showDebug()
+    {
+    	alert("debug_msg");alert($.mobile.allowCrossDomainPages);
+    	console.log("log debug_msg");
+			console.error("error debug_msg");
+			console.warn("warn debug_msg");
+			console.info("info debug_msg");
+			console.debug("debug debug_msg");
+    }
+    function getPkgFile(fileUrl)
+    {
+		    $.ajax({
+				url:  fileUrl,
+				data: {},
+				type: "GET",
+				dataType: "text",
+				complete: function(res,stat){
+					if ( stat == "success" )
+					{
+						alert(res.responseText);
+					}
+				},
+				error:function(res,stat){
+					alert("获取失败");
+				}
+				});		
+    }
+    function getPicture()
+    {
+    	navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+    	destinationType: Camera.DestinationType.FILE_URI });
+    }
+    
+    function onSuccess(imageURI) {
+	    var img = $("#myImage");
+	    img.attr("src",imageURI).show();
+	    
+		}
+
+		function onFail(message) {
+		   alert('Failed because: ' + message);
+		}
+		//$("#pluginsList").listview();
+		//$("#uiContent").enhanceWithin();
+	</script>
+	</div><!-- /content -->
+</div><!-- /page -->
