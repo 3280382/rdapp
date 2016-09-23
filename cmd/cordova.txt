@@ -44,3 +44,15 @@ Installing "cordova-plugin-whitelist" for android
                This plugin is only applicable for versions of cordova-android greater than 4.0. If you have a previous platform version, you do *not*
 need this plugin since the whitelist will be built in.
 
+
+keytool -genkey -v -keystore dukechan-release-key.keystore -alias rdapp -keyalg RSA -keysize 2048 -validity 10000
+
+cd d:\idea\rdapp
+cordova build android --release
+cd D:\idea\rdapp\platforms\android\build\outputs\apk\
+d:
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore "C:\Documents and Settings\HBH.HUANGBANGHUA\.android\dukechan-release-key.keystore" android-release-unsigned.apk rdapp
+move android-release-unsigned.apk rdapp-release.apk 
+adb push rdapp-release.apk /sdcard/rdapp-release.apk
+
+zipalign -v 4 rdapp-release.apk rdapp-release-1.0.0.apk
