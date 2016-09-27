@@ -16,6 +16,7 @@
 	<script src="./js/cordova-index.js"></script>
 	<script src="./js/jquery.js"></script>
 	<script src="./js/jquery.mobile-1.4.5.js"></script>
+	<!--<script src="./js/jquery.mobile.event.debugger.js"></script>-->
 <script>
 		$(function(){
 			$("[data-role='navbar']").navbar();
@@ -30,7 +31,12 @@
     evt.preventDefault();
 });
 
-		alert($.mobile.getClosestBaseUrl($.mobile.activePage));
+			$.mobile.path.pkgBaseUrl = $.mobile.path.documentBase.domain + $.mobile.path.documentBase.directory;
+			var panelInfoHtml = "package base url:" + $.mobile.path.pkgBaseUrl;
+			$("#panelInfo").html(panelInfoHtml);
+			
+			//$.mobile.eventLogger({deprecated:true,events:{page:true,showAlert:true,navigation:true}});
+			
 		});
 </script>	
 
@@ -44,9 +50,11 @@
 </div><!-- /header -->
 
 <div data-role="page">
-	<div role="main" class="ui-content">
-		<p>Rapid development app framework</p>
-		<p>
+<div role="main" class="ui-content" style="text-align:center;">
+<p>Rapid development app framework</p>
+<br>		
+<div id="panelInfo"></div>	
+<p>
 		送人 <br>
 【唐】李咸用 <br>
 一轴烟花满口香，诸侯相见肯相忘。 <br>
@@ -84,37 +92,33 @@
 【清】郑板桥 <br>
 咬定青山不放松，立根原在破岩中。 <br>
 千磨万击还坚劲，任尔东西南北风。
-		</p>
+</p>
 	</div><!-- /content -->
 </div><!-- /page -->
 
-	<div data-role="footer" data-position="fixed" data-theme="a">
-    		<div data-role="navbar">
-			<ul>
-        <li><a href="home/index.html" data-prefetch="true" data-transition="none" style="border:0px" class="ui-btn-active ui-btn-icon-top ui-icon-home">首页</a></li>
-        <li><a href="lri/index.html" data-prefetch="true" data-transition="none" style="border:0px" class="ui-btn ui-btn-icon-top ui-icon-location">本地</a></li>
-        <li><a href="ui/index.html" data-prefetch="true" data-transition="none" style="border:0px" class="ui-btn ui-btn-icon-top ui-icon-bullets">界面</a></li>
-        <li><a href="rri/index.html" data-prefetch="true" data-transition="none"  style="border:0px" class="ui-btn ui-btn-icon-top ui-icon-cloud">远程</a></li>
-        <li><a href="#" style="border:0px" class="ui-btn ui-btn-icon-top ui-icon-grid">模块</a></li>
-        <!--<li><a href="#"   class="ui-btn ui-btn-icon-top ui-icon-bars">平台</a></li>-->
-    </ul>
-    </div>
-	</div><!-- /footer -->
+<div data-role="footer" data-position="fixed" data-theme="a">
+  <div data-role="navbar">
+		<ul>
+      <li><a href="home/index.html" data-prefetch="true" data-transition="none" data-direction="reverse" style="border:0px" class="ui-btn-active ui-btn-icon-top ui-icon-home">首页</a></li>
+      <li><a href="lri/index.html" data-prefetch="true" data-transition="none" data-direction="reverse" style="border:0px" class="ui-btn ui-btn-icon-top ui-icon-location">本地</a></li>
+      <li><a href="ui/index.html" data-prefetch="true" data-transition="none" data-direction="reverse" style="border:0px" class="ui-btn ui-btn-icon-top ui-icon-bullets">界面</a></li>
+      <li><a href="rri/index.html" data-prefetch="true" data-transition="none" data-direction="reverse"  style="border:0px" class="ui-btn ui-btn-icon-top ui-icon-cloud">远程</a></li>
+      <li><a href="#" data-direction="reverse" style="border:0px" class="ui-btn ui-btn-icon-top ui-icon-grid">模块</a></li>
+      <!--<li><a href="#"   class="ui-btn ui-btn-icon-top ui-icon-bars">平台</a></li>-->
+  </ul>
+  </div>
+</div><!-- /footer -->
 	
-	<div data-role="popup" id="moreInfo" data-arrow="true">
+<div data-role="popup" id="moreInfo" data-arrow="true">
 <p>联系快速开发</p>
 <p>投诉快速开发</p>
 <p>投诉快速开发</p>
 <p>投诉快速开发</p>	
-</div>
+</div><!-- /popup -->
 
 <div data-role="panel" id="myInfo" data-position="left" data-display="reveal" data-theme="a">
 
-      <h3>Left Panel: Reveal</h3>
-      <p>This panel is positioned on the left with the reveal display mode. The panel markup is <em>after</em> the header, content and footer in the source order.</p>
-      <p>To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
-      <a href="#demo-links" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">Close panel</a>
-
+<a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">关闭</a>
 </div><!-- /leftpanel1 -->
 </body>
 </html>
