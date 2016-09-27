@@ -2,13 +2,29 @@
 	<div role="main" class="ui-content">
 			<ul data-role="listview"   >
 			<li>
-				<a href="eventsource.html">
-				<h1>本地文件EventSource访问远程服务器</h1>
+			<a href="eventsource.html">
+			<h1>包内访问远程-EventSource</h1>
+			</a></li>
+			<li>
+			<a href="ws/index.html">
+			<h1>包内访问远程-WebSocket</h1>
+			</a></li>
+			<li>
+			<a href="http://m.jd.com">
+			<h1>包内访问远程-链接</h2>
+			</a></li>
+			<li>
+			<a onclick="getPkgFile('http://m.jd.com');" >
+			<h1>包内访问远程-ajax</h2>
+			</a></li>	
+			<li>
+			<a href="../home/index.html">
+			<h1>包内访问包内-链接</h2>
 				</a></li>
-						<li>
-				<a href="ws/index.html">
-				<h1>本地文件WebSocket访问远程服务器</h1>
-				</a></li>
+			<li>
+			<a onclick="getPkgFile('../home/index.html');" >
+			<h1>包内访问包内-ajax</h2>
+			</a></li>	
 		</ul>
 	</div><!-- /content -->
 </div><!-- /page -->
