@@ -35,7 +35,8 @@
 			$("#panelInfo").html(panelInfoHtml);
 			
 			//$.mobile.eventLogger({deprecated:true,events:{page:true,showAlert:true,navigation:true}});
-		if(window.cordova)
+			$.mobile.hashListeningEnabled = false;
+		if(window.cordova&&false)
 		{	
 			 	
 		    document.addEventListener("deviceready", onDeviceReady, false);
