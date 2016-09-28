@@ -43,7 +43,7 @@
 				function onDeviceReady() {
 				    document.addEventListener("backbutton", onBackKeyDown, false);
 				}
-		
+				//首页导航不记录历史，直接退出
 				function onBackKeyDown(e) {
 					if($.mobile.navigate.history.stack.length<=1)
 					{

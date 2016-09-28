@@ -40,3 +40,9 @@
 #angularjs，Bootstrap，ionic 和react-native		
 
 FrameWork7、XUI
+
+#bug
+	external header加载internal header显示延时问题
+	
+#performance
+	在build release版本时利用node压缩、合并js,css,图片，http://www.cnblogs.com/starweb/archive/2013/01/24/2874838.html	http://jiangxiao-2000.iteye.com/blog/1941144
