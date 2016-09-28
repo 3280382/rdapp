@@ -1,28 +1,28 @@
 cordova create rdapp
-cordova plugin add cordova-plugin-battery-status
-cordova plugin add cordova-plugin-camera
-cordova plugin add cordova-plugin-console
-cordova plugin add cordova-plugin-contacts
-cordova plugin add cordova-plugin-device
-cordova plugin add cordova-plugin-device-motion
-cordova plugin add cordova-plugin-device-orientation
-cordova plugin add cordova-plugin-dialogs
-cordova plugin add cordova-plugin-file
-cordova plugin add cordova-plugin-file-transfer
-cordova plugin add cordova-plugin-geolocation
-cordova plugin add cordova-plugin-globalization
-cordova plugin add cordova-plugin-inappbrowser
-cordova plugin add cordova-plugin-media
-cordova plugin add cordova-plugin-media-capture
-cordova plugin add cordova-plugin-network-information
-cordova plugin add cordova-plugin-splashscreen
-cordova plugin add cordova-plugin-vibration
-cordova plugin add cordova-plugin-statusbar
-cordova plugin add cordova-plugin-whitelist
-cordova plugin add cordova-plugin-legacy-whitelist
+cordova plugin add cordova-plugin-battery-status --save
+cordova plugin add cordova-plugin-camera --save
+cordova plugin add cordova-plugin-console --save
+cordova plugin add cordova-plugin-contacts --save
+cordova plugin add cordova-plugin-device --save
+cordova plugin add cordova-plugin-device-motion --save
+cordova plugin add cordova-plugin-device-orientation --save
+cordova plugin add cordova-plugin-dialogs --save
+cordova plugin add cordova-plugin-file --save
+cordova plugin add cordova-plugin-file-transfer --save
+cordova plugin add cordova-plugin-geolocation --save
+cordova plugin add cordova-plugin-globalization --save
+cordova plugin add cordova-plugin-inappbrowser --save
+cordova plugin add cordova-plugin-media --save
+cordova plugin add cordova-plugin-media-capture --save
+cordova plugin add cordova-plugin-network-information --save
+cordova plugin add cordova-plugin-splashscreen --save
+cordova plugin add cordova-plugin-vibration --save
+cordova plugin add cordova-plugin-statusbar --save
+cordova plugin add cordova-plugin-whitelist --save
+cordova plugin add cordova-plugin-legacy-whitelist --save
 
-cordova platform add browser
-cordova platform add android
+cordova platform add browser --save
+cordova platform add android --save
 
 
 Dependent plugin "cordova-plugin-compat" already installed on android.

@@ -2,7 +2,7 @@
 	<div role="main" class="ui-content">
 			<ul data-role="listview"   >
 			<li>
-			<a onclick="getPicture();" >
+			<a href="./plugin_camera.html" >
 			<img src="../images/plugins/camera_128x128-32.png">
 			<h2>摄像头</h2>
 				<p>camera插件的功能，演示如何获取相机拍摄的图片</p>
@@ -16,7 +16,7 @@
 			<span class="ui-li-count">12</span>
 			</a></li>
 			<li>
-				<a href="http://m.jd.com">
+				<a href="../index2.html">
 				<img src="../images/plugins/flickr_128x128-32.png">
 				<h2>跨域连接</h2>
 				<p>功能展示</p>
@@ -40,13 +40,11 @@
 				<p>功能展示</p>
 			</a></li>		
 		</ul>
-		<img id="myImage" style="display:none;"></img>
-		
 			<script>
     function showDebug()
     {
-    	alert("debug_msg");alert($.mobile.allowCrossDomainPages);
-    	console.log("log debug_msg");
+    		alert("android 使用 adb logcat查看日志输出");
+    		console.log("log debug_msg");
 			console.error("error debug_msg");
 			console.warn("warn debug_msg");
 			console.info("info debug_msg");
@@ -70,23 +68,6 @@
 				}
 				});		
     }
-    function getPicture()
-    {
-    	navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-    	destinationType: Camera.DestinationType.FILE_URI });
-    }
-    
-    function onSuccess(imageURI) {
-	    var img = $("#myImage");
-	    img.attr("src",imageURI).show();
-	    
-		}
-
-		function onFail(message) {
-		   alert('Failed because: ' + message);
-		}
-		//$("#pluginsList").listview();
-		//$("#uiContent").enhanceWithin();
 	</script>
 	</div><!-- /content -->
 </div><!-- /page -->
