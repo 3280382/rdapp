@@ -1,6 +1,6 @@
 cordova create rdapp
-cordova plugin add cordova-plugin-battery-status --save
 cordova plugin add cordova-plugin-camera --save
+cordova plugin add cordova-plugin-battery-status --save
 cordova plugin add cordova-plugin-console --save
 cordova plugin add cordova-plugin-contacts --save
 cordova plugin add cordova-plugin-device --save
