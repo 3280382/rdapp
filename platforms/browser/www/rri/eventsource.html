@@ -42,10 +42,10 @@
         var that = this;
 
         // 1. 声明EventSource
-        that.es = new EventSource('http://192.168.31.145:3000/msg');
-        alert(that.es);
+        that.es = new EventSource('http://192.168.1.111:3001/msg');
+
         // 2. 监听数据
-        that.es.onmessage = function (e) {alert(e);
+        that.es.onmessage = function (e) {
             document.querySelector('#msg').innerHTML += '<li>'+ e.data +'</li>'
         };
 

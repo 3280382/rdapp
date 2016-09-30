@@ -3,14 +3,14 @@ var fs = require('fs');
 var UglifyJS = require("uglify-js");
 
  
-function jsMinifier(flieIn, fileOut, fileDir) {
+function jsMinifier(fileIn, fileOut, fileDir) {
 		 if(!fileDir) fileDir = "./js/";
-     var flieIn=Array.isArray(flieIn)? flieIn : [flieIn];
+     var fileIn=Array.isArray(fileIn)? fileIn : [fileIn];
      var origCode,finalCode='';
-     for(var i=0; i<flieIn.length; i++) {
-        origCode = fs.readFileSync(fileDir+flieIn[i], 'utf8');
-        finalCode +=';'+ UglifyJS.parse(origCode);
+     for(var i=0; i<fileIn.length; i++) {
+        fileIn[i] = fileDir+fileIn[i];        
      }
+     finalCode = UglifyJS.minify(fileIn).code;
     fs.writeFileSync(fileOut, finalCode, 'utf8');
 }
 
@@ -33,8 +33,8 @@ function cssMinifier(flieIn, fileOut,fileDir) {
 var imgMinifier = require('node-smushit');
 
 
-jsMinifier(['jquery.js','jquery.mobile-1.4.5.js'], './all-min.js'); //ºÏ²¢Ñ¹Ëõ
-cssMinifier(['jquery.mobile.external-png-1.4.5.css'], './all-min.css');
-imgMinifier.smushit('./images', {recursive: true}); //µÝ¹é
-imgMinifier.smushit('./css/images', {recursive: true}); //µÝ¹é
+jsMinifier(['jquery.js','jquery.mobile-1.4.5.js'], './all-min.js','../../www/js/'); //ºÏ²¢Ñ¹Ëõ
+cssMinifier(['jquery.mobile.external-png-1.4.5.css'], './all-min.css','../../www/css/');
+//imgMinifier.smushit('./images', {recursive: true}); //µÝ¹é
+//imgMinifier.smushit('./css/images', {recursive: true}); //µÝ¹é
 //imgMinifier.smushit('./file-src/images');

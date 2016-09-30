@@ -18,6 +18,7 @@
 @ECHO OFF
 SET script_path="%~dp0build"
 IF EXIST %script_path% (
+				echo %script_path%
         node %script_path% %*
 ) ELSE (
     ECHO.

@@ -6,17 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>home</title>
 	<link rel="stylesheet" href="./css/jquery.mobile.external-png-1.4.5.css">
-	<!--<link rel="stylesheet" href="./css/jquery.mobile.theme-1.4.5.css">	
-	<link rel="stylesheet" href="./css/rdapp.css">
-	<link rel="stylesheet" href="./css/jquery.mobile.icons.min.css">	
-	<link rel="stylesheet" href="./css/jquery.mobile.structure-1.4.5.css">-->
-	
-	<link rel="shortcut icon" href="./favicon.ico">
 	<script src="./cordova.js"></script>
-	<script src="./js/cordova-index.js"></script>
 	<script src="./js/jquery.js"></script>
 	<script src="./js/jquery.mobile-1.4.5.js"></script>
-	<!--<script src="./js/jquery.mobile.event.debugger.js"></script>-->
 <script>
 		$(function(){
 			$("[data-role='navbar']").navbar();
@@ -36,8 +28,30 @@
 			$("#panelInfo").html(panelInfoHtml);
 			
 			//$.mobile.eventLogger({deprecated:true,events:{page:true,showAlert:true,navigation:true}});
-			
+			$.mobile.hashListeningEnabled = false;
+		if(window.cordova&&false)
+		{	
+			 	
+		    document.addEventListener("deviceready", onDeviceReady, false);
+		
+				function onDeviceReady() {
+				    document.addEventListener("backbutton", onBackKeyDown, false);
+				}
+				//首页导航不记录历史，直接退出
+				function onBackKeyDown(e) {
+					if($.mobile.navigate.history.stack.length<=1)
+					{
+						 e.preventDefault();
+						 navigator.app.exitApp();
+					}
+					else
+					{
+						$.mobile.back();
+					}
+				}
+		}					
 		});
+
 </script>	
 
 </head>
@@ -96,7 +110,7 @@
 	</div><!-- /content -->
 </div><!-- /page -->
 
-<div data-role="footer" data-position="fixed" data-theme="a">
+<div data-role="footer" data-position="fixed" data-theme="a" onclick="$.mobile.navigate.history.stack = [];">
   <div data-role="navbar">
 		<ul>
       <li><a href="home/index.html" data-prefetch="true" data-transition="none" data-direction="reverse" style="border:0px" class="ui-btn-active ui-btn-icon-top ui-icon-home">首页</a></li>

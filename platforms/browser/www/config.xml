@@ -22,10 +22,11 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <hook src="scripts/afterBuild.js" type="after_build" />
+    <hook src="hooks/scripts/afterBuild.js" type="after_build" />
+    <preference name="LogLevel" value="VERBOSE" />
     <preference name="DisallowOverscroll" value="true" />
-    <preference name="Fullscreen" value="true" />
-    <preference name="BackgroundColor" value="0xff0000ff" />
+    <preference name="Fullscreen" value="false" />
+    <preference name="BackgroundColor" value="0xff333333" />
     <preference name="HideKeyboardFormAccessoryBar" value="true" />
     <preference name="Orientation" value="default" />
     <preference name="EnableViewportScale" value="true" />
@@ -51,7 +52,6 @@
     <preference name="LoadingDialog" value="My Title,My Message" />
     <preference name="ErrorUrl" value="myErrorPage.html" />
     <preference name="ShowTitle" value="true" />
-    <preference name="LogLevel" value="VERBOSE" />
     <preference name="AndroidLaunchMode" value="singleTop" />
     <preference name="DefaultVolumeStream" value="call" />
     <preference name="OverrideUserAgent" value="Mozilla/5.0 My Browser" />

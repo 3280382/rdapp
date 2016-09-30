@@ -2,7 +2,7 @@
   "name": "min",
   "version": "1.0.0",
   "description": "min js css images",
-  "main": "minall.js",
+  "main": "minifyall.js",
   "dependencies": {
     "clean-css": "^3.4.20",
     "node-smushit": "^0.5.1",
