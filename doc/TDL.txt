@@ -45,4 +45,16 @@ FrameWork7、XUI
 	external header加载internal header显示延时问题
 	
 #performance
-	在build release版本时利用node压缩、合并js,css,图片，http://www.cnblogs.com/starweb/archive/2013/01/24/2874838.html	http://jiangxiao-2000.iteye.com/blog/1941144
+	min&package:Grunt/Gulp 在build release版本时利用node压缩、合并js,css,图片，http://www.cnblogs.com/starweb/archive/2013/01/24/2874838.html	http://jiangxiao-2000.iteye.com/blog/1941144
+	async:async.js
+	cache:Redis
+	client render: AngularJS, Ember, Meteor,
+	less server side sierialize
+	在 Node 前面用 Nginx 
+
+#wechat	
+	http://mp.weixin.qq.com/wiki/10/e5f772f4521da17fa0d7304f68b97d7e.html
+###canvas+websocket
+	游戏服务端架构pomelo Grits，Browser Quest
+	
+	
