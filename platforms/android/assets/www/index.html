@@ -6,17 +6,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>home</title>
 	<link rel="stylesheet" href="./css/jquery.mobile.external-png-1.4.5.css">
-	<!--<link rel="stylesheet" href="./css/jquery.mobile.theme-1.4.5.css">	
-	<link rel="stylesheet" href="./css/rdapp.css">
-	<link rel="stylesheet" href="./css/jquery.mobile.icons.min.css">	
-	<link rel="stylesheet" href="./css/jquery.mobile.structure-1.4.5.css">-->
-	
-	<link rel="shortcut icon" href="./favicon.ico">
 	<script src="./cordova.js"></script>
 	<script src="./js/jquery.js"></script>
 	<script src="./js/jquery.mobile-1.4.5.js"></script>
-	<!--<script src="./js/jquery.mobile.event.debugger.js"></script>-->
 <script>
+		var rdapp = {rdesHost : "rdes.oschina.mopaasapp.com"};
 		$(function(){
 			$("[data-role='navbar']").navbar();
 			$("[data-role='header'], [data-role='footer']").toolbar();
@@ -36,6 +30,7 @@
 			
 			//$.mobile.eventLogger({deprecated:true,events:{page:true,showAlert:true,navigation:true}});
 			$.mobile.hashListeningEnabled = false;
+			$.mobile.allowCrossDomainPages = true;
 		if(window.cordova&&false)
 		{	
 			 	
@@ -56,7 +51,9 @@
 						$.mobile.back();
 					}
 				}
-		}					
+		}		
+		
+					
 		});
 
 </script>	
@@ -64,7 +61,7 @@
 </head>
 
 <body>
-<div data-role="header"  data-position="fixed" data-theme="a">
+<div data-role="header"  data-position="fixed"  data-tap-toggle="false" data-transition="none" data-theme="a">
 	<h1>RDAPP</h1>
     <a href="#myInfo" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-user">用户信息</a>	
     <a href="#" id="optMoreInfo" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-right ui-btn-icon-left ui-icon-plus">更多</a>	
@@ -117,10 +114,10 @@
 	</div><!-- /content -->
 </div><!-- /page -->
 
-<div data-role="footer" data-position="fixed" data-theme="a" onclick="$.mobile.navigate.history.stack = [];">
+<div data-role="footer" data-position="fixed"  data-tap-toggle="false" data-transition="none" data-theme="a" onclick="$.mobile.navigate.history.stack = [];">
   <div data-role="navbar">
 		<ul>
-      <li><a href="home/index.html" data-prefetch="true" data-transition="none" data-direction="reverse" style="border:0px" class="ui-btn-active ui-btn-icon-top ui-icon-home">首页</a></li>
+      <li><a href="home/index.html" data-prefetch="true" data-transition="none" data-direction="reverse" style="border:0px" data-role="button" data-icon="home" data-iconpos="top">首页</a></li>
       <li><a href="lri/index.html" data-prefetch="true" data-transition="none" data-direction="reverse" style="border:0px" class="ui-btn ui-btn-icon-top ui-icon-location">本地</a></li>
       <li><a href="ui/index.html" data-prefetch="true" data-transition="none" data-direction="reverse" style="border:0px" class="ui-btn ui-btn-icon-top ui-icon-bullets">界面</a></li>
       <li><a href="rri/index.html" data-prefetch="true" data-transition="none" data-direction="reverse"  style="border:0px" class="ui-btn ui-btn-icon-top ui-icon-cloud">远程</a></li>
