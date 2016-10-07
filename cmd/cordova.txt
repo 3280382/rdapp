@@ -46,6 +46,7 @@ need this plugin since the whitelist will be built in.
 
 
 keytool -genkey -v -keystore dukechan-release-key.keystore -alias rdapp -keyalg RSA -keysize 2048 -validity 10000
+ps£ºphone
 
 cd d:\idea\rdapp
 cordova build android --release

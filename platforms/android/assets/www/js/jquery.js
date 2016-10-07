@@ -626,6 +626,7 @@ jQuery.extend({
 
 	// args is for internal usage only
 	each: function( obj, callback, args ) {
+		if(!obj) return;
 		var value,
 			i = 0,
 			length = obj.length,

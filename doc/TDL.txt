@@ -26,7 +26,7 @@
 #云平台相关接口功能研究
 #hadoop相关研究
 #cicl迁移至rdes
-	代码清洁，去掉不相关作者
+	代码清洁
 	默认数据库由oracle改mysql
 	构建工具由maven改gradle
 	引用的核心框架版本升级
@@ -51,7 +51,8 @@ FrameWork7、XUI
 	client render: AngularJS, Ember, Meteor,
 	less server side sierialize
 	在 Node 前面用 Nginx 
-
+	SPA&bigpipe
+	SPA，route，layout，panel&toolsbar，widget，ajaxHtmlPagelet，ajaxJsonDataInterface ？？client&server xTemplate
 #wechat	
 	http://mp.weixin.qq.com/wiki/10/e5f772f4521da17fa0d7304f68b97d7e.html
 ###canvas+websocket

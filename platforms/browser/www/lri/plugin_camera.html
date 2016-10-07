@@ -1,26 +1,53 @@
+
+
 <div data-role="page">
-<div data-role="header"  data-position="fixed" data-tap-toggle="false" data-transition="none">
+<div id="nh" data-role="header"  data-position="fixed" data-tap-toggle="false" data-theme="a" data-transition="none">
 	<h1>本地演示</h1>
     <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-btn-inline ui-mini  ui-btn-icon-left ui-icon-back">返回</a>	
 </div><!-- /header -->
-	<div role="main" class="ui-content">
-	<a href="#" class="ui-btn ui-btn-inline" onclick="getPicture();">拍摄相片</a>
-	<img id="myImage" style="display:none;width:100%;"></img>
+	<div role="main" class="ui-content">	
+	<form>
+		<a href="#" class="ui-btn ui-btn-inline" onclick="getCameraPicture();">拍摄相片</a>
+		<div id="pluginOptionsEle" class="ui-field-contain" data-mini="true">	
+			<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+	        <legend>DestinationType:</legend>
+	        <input name="radio-choice-h-1" id="radio-choice-h-1a" value="DATA_URL" checked="checked" type="radio">
+	        <label for="radio-choice-h-1a">DATA_URL</label>
+	        <input name="radio-choice-h-1" id="radio-choice-h-1b" value="FILE_URI" type="radio">
+	        <label for="radio-choice-h-1b">FILE_URI</label>
+	        <input name="radio-choice-h-1" id="radio-choice-h-1c" value="NATIVE_URI" type="radio">
+	        <label for="radio-choice-h-1c">NATIVE_URI</label>
+			</fieldset>
+		</div>
+</form>
+	<img id="cameraImageEle" style="display:none;width:100%;"></img>
 	<script>
-    function getPicture()
+		var cameraOptions =
+		{ 
+			quality: 50,
+			destinationType: navigator.camera.DestinationType.FILE_URI,
+			sourceType: navigator.camera.PictureSourceType.CAMERA,
+			allowEdit: true,
+			encodingType: navigator.camera.EncodingType.JPEG,
+			//targetWidth: "",
+			//targetHeight: "",
+			mediaType: navigator.camera.MediaType.PICTURE,
+			correctOrientation: true,
+			saveToPhotoAlbum: true,
+			//popoverOptions: "", //IOS only
+			cameraDirection: navigator.camera.Direction.BACK
+    };
+    function getCameraPicture()
     {
-    	navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-    	destinationType: Camera.DestinationType.FILE_URI });
-    }
-    
-    function onSuccess(imageURI) {
-	    var img = $("#myImage");
-	    img.attr("src",imageURI).show();
-	    
+    	alert($("radio-choice-h-1").value);
+    	navigator.camera.getPicture(onCameraSuccess, onCameraFail, cameraOptions);
+    }    
+    function onCameraSuccess(imageURI) {
+	    var cameraImage = $("#cameraImageEle");
+	    cameraImage.attr("src",imageURI).show();	    
 		}
-
-		function onFail(message) {
-		   alert('Failed because: ' + message);
+		function onCameraFail(message) {
+		  alert("Failed because: " + message);
 		}
 	</script>
 	</div><!-- /content -->

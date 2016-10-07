@@ -58,6 +58,7 @@
 	function getDocs( location ) {
 		$.ajax( location, {
 			success: function( data ) {
+				alert(data);
 				docs = $.parseXML( data );
 				$( docs ).find( "[type='widget']").each( function() {
 					var title = $( this ).attr( "event-prefix" );
