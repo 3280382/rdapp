@@ -58,4 +58,22 @@ FrameWork7、XUI
 ###canvas+websocket
 	游戏服务端架构pomelo Grits，Browser Quest
 	
+#UI frameworks
+##QQ-frozen
+	build:Gruntfile
+	css:sass, fontface图标字体化
+	js:zepto.js
+	html:没用模板，简单include header和footer；直接使用css无使用data-role；
+	widget：基本控件、布局依赖css实现界面部分；frozen.js少部分控件简单封装；
+	mobile 手势&transitiong：frozen.js在zepto基础上对选择器，手势封装，transition封装；zepto有ajax异步调用封装；	
+	SPA&router:demo ajax实现SPA；无特殊router，使用history；
+	debug：无
 	
+##weui
+	build:gulp
+	css:less,fontface图标字体化
+	js：zepto.js
+	html：没用模板，通过scirpt方式导入mutil page
+	widget：无，有另外的weui-react进行widget化
+	mobile 手势&transitiong：无
+	SPA&router：简单封装了router和page管理，基本无SPA支持	
