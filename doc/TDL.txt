@@ -60,8 +60,9 @@ FrameWork7、XUI
 	游戏服务端架构pomelo Grits，Browser Quest
 	
 #UI frameworks
+
 ##QQ-frozen
-	build:Gruntfile
+	build:Grunt
 	ui-design,render
 		css:sass, fontface图标字体化
 		js:zepto.js
@@ -69,18 +70,49 @@ FrameWork7、XUI
 		widget：基本控件、布局依赖css实现界面部分；frozen.js少部分控件简单封装；
 	mobile 手势&transitiong：frozen.js在zepto基础上对选择器，手势封装，transition封装；zepto有ajax异步调用封装；	
 	SPA&router:demo ajax实现SPA；无特殊router，使用history；基本无SPA支持	
+	comet:无
 	native:无
 	debug：无
-	
+	IDE:无
 	
 ##weui
-	build:gulp
+	build:	gulp
 	ui-design,render
-		css:less,fontface图标字体化
-		js：zepto.js
-		html：没用模板，通过scirpt方式导入mutil page
-		widget：无，有另外的weui-react进行widget化
-	mobile 手势&transitiong：无
+		css:			less,fontface图标字体化
+		js：			zepto.js
+		html:			没用模板，通过scirpt方式导入mutil page
+		widget：	无，有另外的weui-react进行widget化
+	mobile 			手势&transitiong：无
 	SPA&router：简单封装了router和page管理，少无SPA支持	
-	native:无
-	debug:vConsole
+	comet:			无
+	native:			无
+	debug:			vConsole
+	IDE:				无
+	
+##mui
+	build:			Grunt,gulp
+	ui-design,render
+		css:			sass,fontface图标字体化
+		js：			参考zepto.js等，无引用
+		html：		无
+		widget：	css样式为主，复杂动态部分js实现
+	mobile 			手势&transitiong：有
+	SPA&router：有router和page管理，有部分SPA支持	
+	comet:			无
+	native:			有，似乎不完全开源
+	debug:			无	
+	IDE:				有，基于Aptana/eclipse
+	
+##JQueryMobile
+	build:			无
+	ui-design,render
+		css:			无
+		js：			JQuery
+		html：		无
+		widget：	data-role，css，js实现控件化
+	mobile 			手势&transitiong：有，手势缺失部分。兼容多平台，pc，phone，pad，tv
+	SPA&router：有router和page管理，有SPA支持	
+	comet:			无
+	native:			无
+	debug:			有，但没更新了	
+	IDE:				无
