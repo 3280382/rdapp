@@ -38,6 +38,7 @@
 	图标资源和设计、颜色
 #反编译，混淆，签名
 #angularjs，Bootstrap，ionic 和react-native		
+#Aptana
 
 FrameWork7、XUI
 
