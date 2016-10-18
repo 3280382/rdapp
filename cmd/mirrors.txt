@@ -1,0 +1,17 @@
+MAVEN
+     <mirror>
+			<id>alimaven</id>
+			<mirrorOf>central</mirrorOf>
+			<name>aliyun maven</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+    </mirror>
+    
+NPM
+https://registry.npm.taobao.org
+
+android sdk
+
+
+
+
+    

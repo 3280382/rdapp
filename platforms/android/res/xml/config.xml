@@ -62,7 +62,7 @@
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
-    <name>rdapp</name>
+    <name>RDAPP</name>
     <description>
         Rapid development app framework
     </description>
@@ -70,6 +70,7 @@
         duke chan
     </author>
     <content src="index.html" />
+    <icon src="res/icon.png" />
     <access origin="*" />
     <allow-navigation href="*" />
     <allow-intent href="http://*/*" />

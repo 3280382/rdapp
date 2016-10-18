@@ -5,13 +5,63 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>home</title>
-	<link rel="stylesheet" href="./css/jquery.mobile.bootstrap-1.4.5.css">
+	<link rel="stylesheet" href="./css/jquery.mobile.external-png-1.4.5.css">
 	<script src="./cordova.js"></script>
-	<script src="./js/jquery.js"></script>
-	<script src="./js/jquery.mobile-1.4.5.js"></script>
+	<script src="./js/jquery-2.2.4.js"></script>
+	<script src="./js/jquery.mobile-git.js"></script>
+	<script src="./js/debug/jquery.mobile.event.debugger.js"></script>
+	<!--<script src="./js/debug/vconsole.min.js"></script>-->
 <script>
+
 		var rdapp = {rdesHost : "rdes.oschina.mopaasapp.com"};
 		$(function(){
+					var options =
+		{
+			deprecated: false,
+			location: "./js/docs.xml",
+			showAlert: false,
+			widgets: {},
+			events: {
+				vmouse: true,
+				touch: true,
+				page: true,
+				layout: true,
+				navigation: true
+			}
+		};
+		//$.mobile.eventLogger(options);
+	function logevent(evtName,evtTarget)
+	{
+		if(!evtTarget) evtTarget = $.mobile.document;
+		evtTarget.on(evtName, function (evt){
+			curEvent = evt;
+			//console.log("ijqm:"+evtName+":"+JSON.stringify(evt.originalEvent).replace(/\r/g,"").replace(/\n/g,""));
+			var msg = evt.pageX+","+evt.pageY;
+			console.log((new Date()).getTime()+"@ijqm:"+evtName+":"+msg);
+			
+			});
+		
+		
+	}
+	logevent("scrollstart");
+	logevent("scrollstop");
+	logevent("swipe");
+	logevent("swipeleft");
+	logevent("swiperight");
+	logevent("tap");
+	logevent("taphold");
+	logevent("vclick");
+	logevent("vmousecancel");
+	logevent("vmousedown");
+	logevent("vmousemove");
+	logevent("vmouseout");
+	logevent("vmouseover");
+	logevent("vmouseup");
+	logevent("touchstart");
+	logevent("touchmove");
+	logevent("touchcancel");
+	logevent("touchend");
+			
 			$("[data-role='navbar']").navbar();
 			$("[data-role='header'], [data-role='footer']").toolbar();
 			
@@ -67,6 +117,7 @@
     <a href="#popupNested" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-bars ui-btn-icon-left ui-btn-b" data-transition="pop">更多</a>
 </div><!-- /header -->
 
+<div id="pageWrapper">
 <div data-role="page">
 <div role="main" class="ui-content" style="text-align:center;">
 <p>Rapid development app framework</p>
@@ -113,6 +164,7 @@
 </p>
 	</div><!-- /content -->
 </div><!-- /page -->
+</div><!-- /pageWrapper -->
 
 <div data-role="footer" data-position="fixed"  data-tap-toggle="false" data-transition="none" data-theme="a" onclick="$.mobile.navigate.history.stack = [];">
   <div data-role="navbar">
@@ -121,7 +173,7 @@
       <li><a href="lri/index.html" data-prefetch="true" data-transition="none" data-direction="reverse" style="border:0px" class="ui-btn ui-btn-icon-top ui-icon-location">本地</a></li>
       <li><a href="ui/index.html" data-prefetch="true" data-transition="none" data-direction="reverse" style="border:0px" class="ui-btn ui-btn-icon-top ui-icon-bullets">界面</a></li>
       <li><a href="rri/index.html" data-prefetch="true" data-transition="none" data-direction="reverse"  style="border:0px" class="ui-btn ui-btn-icon-top ui-icon-cloud">远程</a></li>
-      <li><a href="#" data-direction="reverse" style="border:0px" class="ui-btn ui-btn-icon-top ui-icon-grid">模块</a></li>
+      <li><a href="game/index.html" data-direction="reverse" style="border:0px" class="ui-btn ui-btn-icon-top ui-icon-grid">游戏</a></li>
       <!--<li><a href="#"   class="ui-btn ui-btn-icon-top ui-icon-bars">平台</a></li>-->
   </ul>
   </div>

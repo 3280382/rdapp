@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.duke.rdapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>rdapp</name>
+    <name>RDAPP</name>
     <description>
         Rapid development app framework
     </description>
@@ -8,6 +8,7 @@
         duke chan
     </author>
     <content src="index.html" />
+    <icon src="res/icon.png" />
     <access origin="*" />
     <allow-navigation href="*" />
     <allow-intent href="http://*/*" />
