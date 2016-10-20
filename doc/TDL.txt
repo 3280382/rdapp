@@ -116,3 +116,22 @@ FrameWork7、XUI
 	native:			无
 	debug:			有，但没更新了	
 	IDE:				无
+	
+	
+本地：
+界面：
+远程：
+	EventSource
+	WebSocket
+	Jsonrpc
+	Restful
+	Nodejs+Mongodb
+	Srping+mysql
+游戏：
+	界面引擎
+	服务器框架
+第三方：
+	微信：公众号、小程序
+	QQ：
+	
+	
