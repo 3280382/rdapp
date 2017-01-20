@@ -57,6 +57,7 @@ var m = {
 
 	// ≥ı ºªØcocos
 	initCocos : function() {
+		//if(!cc.game.config.id)cc.game._initConfig();
 		var self = this;
 		cc.game.onStart = function(){
 			cc.view.enableAutoFullScreen(false);

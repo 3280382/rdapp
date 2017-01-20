@@ -3,7 +3,9 @@ cc._tmp = cc._tmp || {}, cc._LogInfos = {}, window._p, _p = window, _p.gl, _p.We
 		return document.createElement(a)
 	}, cc._addEventListener = function(a, b, c, d) {
 		a.addEventListener(b, c, d)
-	}, cc._isNodeJs = "undefined" != typeof require && require("fs"), cc.each = function(a, b, c) {
+	}, 
+	cc._isNodeJs = "undefined" != typeof require && require("fs")/*false*/,
+	 cc.each = function(a, b, c) {
 		if (a)
 			if (a instanceof Array) {
 				for (var d = 0, e = a.length; e > d; d++)
@@ -235,9 +237,10 @@ cc._tmp = cc._tmp || {}, cc._LogInfos = {}, window._p, _p = window, _p.gl, _p.We
 			}
 		},
 		_loadTxtSync: function(a) {
-			if (cc._isNodeJs) {
+			if (cc._isNodeJs ) {
 				var b = require("fs");
-				return b.readFileSync(a).toString()
+				var ret = b.readFileSync(a).toString();
+				return ret;
 			}
 			var c = this.getXMLHttpRequest();
 			return c.open("GET", a, !1), /msie/i.test(navigator.userAgent) && !/opera/i.test(navigator.userAgent) ? c.setRequestHeader("Accept-Charset", "utf-8") : c.overrideMimeType && c.overrideMimeType("text/plain; charset=utf-8"), c.send(null), 4 === !c.readyState || 200 !== c.status ? null : c.responseText
